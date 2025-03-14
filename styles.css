@@ -1,0 +1,142 @@
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.splash-headline {
+    max-width: 1000px;
+    margin: 0 auto 30px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.splash-headline h1 {
+    color: #2c3e50;
+    margin-top: 0;
+}
+
+.splash-headline p {
+    line-height: 1.6;
+    text-align: left;
+    max-width: 800px;
+    margin: 15px auto;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#canvas-container {
+    width: 100%;
+    height: 500px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#controls {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    font-size: 16px;
+}
+
+.stats div {
+    margin-bottom: 5px;
+}
+
+.stats span {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+button {
+    padding: 8px 16px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+#reset {
+    background-color: #e74c3c;
+}
+
+#reset:hover {
+    background-color: #c0392b;
+}
+
+.slider-container {
+    margin-top: 15px;
+    width: 100%;
+}
+
+.slider-container label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="range"] {
+    width: 100%;
+}
+
+.explanation {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.explanation h2 {
+    color: #2c3e50;
+    margin-top: 0;
+}
+
+.explanation p {
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .buttons {
+        margin-top: 15px;
+    }
+} 
