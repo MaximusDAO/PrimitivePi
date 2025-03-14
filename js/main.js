@@ -15,6 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
         simulation.dropMultipleNeedles(100);
     });
     
+    document.getElementById('drop-thousand').addEventListener('click', () => {
+        simulation.dropMultipleNeedles(1000);
+    });
+    
     document.getElementById('drop-tenthousand').addEventListener('click', () => {
         simulation.dropMultipleNeedles(10000);
     });
