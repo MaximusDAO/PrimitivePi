@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 20px;
-    font-family: 'Comic Sans MS', sans-serif;
+    font-family: 'Arial', sans-serif;
     background-color: #e8d9b5;
     color: #5d4037;
     background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
@@ -90,7 +90,7 @@ button {
     border-radius: 4px;
     cursor: pointer;
     font-size: 14px;
-    font-family: 'Comic Sans MS',  sans-serif;
+    font-family: 'Arial',  sans-serif;
     font-weight: bold;
     transition: background-color 0.2s;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
