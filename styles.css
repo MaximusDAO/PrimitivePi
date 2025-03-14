@@ -90,7 +90,7 @@ button {
     border-radius: 4px;
     cursor: pointer;
     font-size: 14px;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-family: 'Comic Sans MS',  sans-serif;
     font-weight: bold;
     transition: background-color 0.2s;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
