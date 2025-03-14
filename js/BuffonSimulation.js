@@ -11,8 +11,8 @@ class BuffonSimulation {
         // Constants
         this.NEEDLE_LENGTH = 1;
         this.LINE_SPACING = 2 * this.NEEDLE_LENGTH; // 2L as specified
-        this.NEEDLE_COLOR = 0x3498db;
-        this.CROSSING_NEEDLE_COLOR = 0xe74c3c;
+        this.NEEDLE_COLOR = 0x8B4513; // Brown for sticks
+        this.CROSSING_NEEDLE_COLOR = 0x4CAF50; // Green for crossing sticks
         
         this.init();
     }
@@ -20,7 +20,7 @@ class BuffonSimulation {
     init() {
         // Set up Three.js scene
         this.scene = new THREE.Scene();
-        this.scene.background = new THREE.Color(0xffffff);
+        this.scene.background = new THREE.Color(0xa1887f); // Dirt color background
         
         // Set up camera
         const width = this.container.clientWidth;
@@ -60,9 +60,9 @@ class BuffonSimulation {
         this.boardWidth = cameraWidth - 2 * paddingX;
         this.boardHeight = cameraHeight - 2 * paddingY;
         
-        // Create a board background
+        // Create a board background (dirt texture)
         const boardGeometry = new THREE.PlaneGeometry(this.boardWidth, this.boardHeight);
-        const boardMaterial = new THREE.MeshBasicMaterial({ color: 0xf8f9fa });
+        const boardMaterial = new THREE.MeshBasicMaterial({ color: 0xa1887f }); // Dirt color
         this.board = new THREE.Mesh(boardGeometry, boardMaterial);
         this.scene.add(this.board);
         
@@ -71,7 +71,7 @@ class BuffonSimulation {
         
         // Create lines
         const lineGeometry = new THREE.BufferGeometry();
-        const lineMaterial = new THREE.LineBasicMaterial({ color: 0x2c3e50, linewidth: 2 });
+        const lineMaterial = new THREE.LineBasicMaterial({ color: 0x5D4037, linewidth: 3 }); // Darker brown for lines
         
         this.lines = [];
         this.linePositions = [];
@@ -103,17 +103,24 @@ class BuffonSimulation {
         // Random angle
         const angle = Math.random() * Math.PI;
         
-        // Create needle geometry
+        // Create needle geometry with slight variation for a more natural stick look
         const needleGeometry = new THREE.BufferGeometry();
         const halfLength = this.NEEDLE_LENGTH / 2;
         
+        // Add slight curve/variation to make it look more like a real stick
         const x1 = x - halfLength * Math.cos(angle);
         const y1 = y - halfLength * Math.sin(angle);
         const x2 = x + halfLength * Math.cos(angle);
         const y2 = y + halfLength * Math.sin(angle);
         
+        // Add a slight bend in the middle for a more natural stick appearance
+        const bendAmount = Math.random() * 0.05;
+        const midX = (x1 + x2) / 2 + bendAmount * Math.sin(angle);
+        const midY = (y1 + y2) / 2 - bendAmount * Math.cos(angle);
+        
         const points = [
             new THREE.Vector3(x1, y1, 0.1),
+            new THREE.Vector3(midX, midY, 0.1),
             new THREE.Vector3(x2, y2, 0.1)
         ];
         
@@ -129,10 +136,10 @@ class BuffonSimulation {
             }
         }
         
-        // Create needle with appropriate color
+        // Create needle with appropriate color and thickness
         const needleMaterial = new THREE.LineBasicMaterial({ 
             color: crossing ? this.CROSSING_NEEDLE_COLOR : this.NEEDLE_COLOR,
-            linewidth: 2
+            linewidth: 2 + Math.random() * 2 // Varying thickness for more natural look
         });
         
         const needle = new THREE.Line(needleGeometry, needleMaterial);

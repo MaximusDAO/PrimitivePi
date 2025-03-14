@@ -1,9 +1,10 @@
 body {
     margin: 0;
     padding: 20px;
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #e8d9b5;
+    color: #5d4037;
+    background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
 }
 
 .splash-headline {
@@ -14,15 +15,18 @@ body {
 }
 
 .splash-headline h1 {
-    color: #2c3e50;
+    color: #5d4037;
     margin-top: 0;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.splash-headline p {
+.splash-headline h4 {
     line-height: 1.6;
     text-align: left;
     max-width: 800px;
     margin: 15px auto;
+    color: #6d4c41;
 }
 
 #container {
@@ -35,11 +39,11 @@ body {
 #canvas-container {
     width: 100%;
     height: 500px;
-    background-color: #fff;
-    border: 1px solid #ddd;
+    background-color: #a1887f;
+    border: 8px solid #8d6e63;
     border-radius: 5px;
     overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 #controls {
@@ -49,9 +53,10 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 15px;
-    background-color: #fff;
+    background-color: #bcaaa4;
     border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 4px solid #8d6e63;
 }
 
 .stats {
@@ -59,6 +64,7 @@ body {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     font-size: 16px;
+    font-weight: bold;
 }
 
 .stats div {
@@ -67,7 +73,7 @@ body {
 
 .stats span {
     font-weight: bold;
-    color: #2c3e50;
+    color: #4e342e;
 }
 
 .buttons {
@@ -77,26 +83,29 @@ body {
 }
 
 button {
-    padding: 8px 16px;
-    background-color: #3498db;
-    color: white;
+    padding: 10px 18px;
+    background-color: #8d6e63;
+    color: #fff8e1;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-size: 14px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-weight: bold;
     transition: background-color 0.2s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 button:hover {
-    background-color: #2980b9;
+    background-color: #6d4c41;
 }
 
 #reset {
-    background-color: #e74c3c;
+    background-color: #795548;
 }
 
 #reset:hover {
-    background-color: #c0392b;
+    background-color: #5d4037;
 }
 
 .slider-container {
@@ -107,23 +116,38 @@ button:hover {
 .slider-container label {
     display: block;
     margin-bottom: 5px;
+    font-weight: bold;
 }
 
 input[type="range"] {
     width: 100%;
+    height: 10px;
+    -webkit-appearance: none;
+    background: #8d6e63;
+    border-radius: 5px;
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #5d4037;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
 .explanation {
     max-width: 1000px;
     margin: 30px auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: #bcaaa4;
     border-radius: 5px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .explanation h2 {
-    color: #2c3e50;
+    color: #4e342e;
     margin-top: 0;
 }
 
